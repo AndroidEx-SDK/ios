@@ -1,0 +1,22 @@
+dependencies: \
+  /Users/nodepoint/workspace/Residential/Intermobile/ios/Intermobile/main.m \
+  /Users/nodepoint/workspace/Residential/Intermobile/ios/Intermobile/AppDelegate.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/ios/../node_modules/jpush-react-native/ios/RCTJPushModule/RCTJPushModule/RCTJPushModule.h \
+  ../node_modules/react-native/React/Base/RCTBridgeModule.h \
+  ../node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/ios/../node_modules/jpush-react-native/ios/RCTJPushModule/RCTJPushModule/JPUSHService.h \
+  tyrtcsdk/inc/mknetwork/tyrtchttpengine.h \
+  tyrtcsdk/inc/mknetwork/MKNetworkEngineRTC.h \
+  tyrtcsdk/inc/mknetwork/MKNetworkKit.h \
+  tyrtcsdk/inc/mknetwork/Categories/NSString+MKNetworkKitAdditions.h \
+  tyrtcsdk/inc/mknetwork/Categories/NSDictionary+RequestEncoding.h \
+  tyrtcsdk/inc/mknetwork/Categories/NSDate+RFC1123.h \
+  tyrtcsdk/inc/mknetwork/Categories/NSData+MKBase64.h \
+  tyrtcsdk/inc/mknetwork/Categories/UIImageView+MKNetworkKitAdditions.h \
+  tyrtcsdk/inc/mknetwork/Categories/UIAlertView+MKNetworkKitAdditions.h \
+  tyrtcsdk/inc/mknetwork/Reachability/ReachabilityRTC.h \
+  tyrtcsdk/inc/mknetwork/MKNetworkOperationRTC.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/ios/Intermobile/RtcController.h \
+  ../node_modules/react-native/React/Base/RCTLog.h \
+  ../node_modules/react-native/React/Base/RCTAssert.h \
+  tyrtcsdk/inc/sdkobj.h tyrtcsdk/inc/sdkkey.h

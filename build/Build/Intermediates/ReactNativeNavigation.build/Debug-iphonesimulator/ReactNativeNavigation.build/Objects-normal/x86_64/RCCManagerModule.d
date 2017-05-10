@@ -1,0 +1,32 @@
+dependencies: \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCManagerModule.m \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCManagerModule.h \
+  ../../react-native/React/Base/RCTBridgeModule.h \
+  ../../react-native/React/Base/RCTDefines.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCManager.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCNavigationController.h \
+  ../../react-native/React/Base/RCTBridge.h \
+  ../../react-native/React/Base/RCTBridgeDelegate.h \
+  ../../react-native/React/Base/RCTJavaScriptLoader.h \
+  ../../react-native/React/Base/RCTFrameUpdate.h \
+  ../../react-native/React/Base/RCTInvalidating.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCViewController.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerController.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCLightBox.h \
+  ../../react-native/React/Base/RCTConvert.h \
+  ../../react-native/React/CSSLayout/CSSLayout.h \
+  ../../react-native/React/CSSLayout/CSSEnums.h \
+  ../../react-native/React/CSSLayout/CSSMacros.h \
+  ../../react-native/React/Views/RCTAnimationType.h \
+  ../../react-native/React/Views/RCTBorderStyle.h \
+  ../../react-native/React/Views/RCTTextDecorationLineType.h \
+  ../../react-native/React/Base/RCTLog.h \
+  ../../react-native/React/Base/RCTAssert.h \
+  ../../react-native/React/Views/RCTPointerEvents.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCTabBarController.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCTheSideBarManagerViewController.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/TheSidebarController.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/Animations/SidebarAnimation.h \
+  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCNotification.h
