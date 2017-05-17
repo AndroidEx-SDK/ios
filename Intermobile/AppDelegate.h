@@ -16,7 +16,7 @@
 #import "RtcController.h"
 
 //static NSString *appKey = @"14bdf0ddf096ac07559ffa24";     //JPSUH填写appkey
-static NSString *appKey = @"9297df4e880708800df50b66";     //JPSUH填写appkey  安卓工控
+static NSString *appKey = @"7809e4354a9eb0895971b9e8";     //JPSUH填写appkey  安卓工控
 static NSString *channel = nil;    //JPSUH填写channel   一般为nil
 static BOOL isProduction = false;  //填写isProdurion  平时测试时为false ，生产时填写true
 static NSString *APPLICATION_URL=nil;
