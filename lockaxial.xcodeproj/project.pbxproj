@@ -806,7 +806,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = A55WSH5V6N;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1212,7 +1212,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Intermobile/Intermobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yongping Li (A55WSH5V6N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yongping Li (A55WSH5V6N)";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A55WSH5V6N;
 				ENABLE_BITCODE = NO;
@@ -1283,8 +1283,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.androidex.lockaxial;
 				PRODUCT_NAME = lockaxial;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "846f063b-eab9-4fc7-9a4c-1d4ebbe3704a";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS adhoc Distribution";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1372,8 +1372,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.androidex.lockaxial;
 				PRODUCT_NAME = lockaxial;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "ed98d931-50a8-46ee-b540-6afc9c6d54a2";
+				PROVISIONING_PROFILE_SPECIFIER = iosdevelopment;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1386,8 +1386,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Intermobile/Intermobile.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yongping Li (A55WSH5V6N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A55WSH5V6N;
 				ENABLE_BITCODE = NO;
@@ -1458,8 +1458,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.androidex.lockaxial;
 				PRODUCT_NAME = lockaxial;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "7dd37f75-25b2-4a0b-80df-63d7b2db87d9";
+				PROVISIONING_PROFILE_SPECIFIER = iosdistribution;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
