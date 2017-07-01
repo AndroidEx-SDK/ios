@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCManager.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCManager.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCManager.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCManager.h \
   ../../react-native/React/Base/RCTBridgeModule.h \
   ../../react-native/React/Base/RCTDefines.h \
   ../../react-native/React/Base/RCTBridge.h \

@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-image-crop-picker/ios/RSKImageCropper/RSKImageCropper/UIApplication+RSKImageCropper.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-image-crop-picker/ios/RSKImageCropper/RSKImageCropper/module.modulemap \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-image-crop-picker/ios/RSKImageCropper/RSKImageCropper/UIApplication+RSKImageCropper.h
+  /Users/yerong/github/lockaxial/node_modules/react-native-image-crop-picker/ios/RSKImageCropper/RSKImageCropper/UIApplication+RSKImageCropper.m \
+  /Users/yerong/github/lockaxial/ios/build/Build/Intermediates/RSKImageCropper.build/Debug-iphonesimulator/RSKImageCropper.build/module.modulemap \
+  /Users/yerong/github/lockaxial/node_modules/react-native-image-crop-picker/ios/RSKImageCropper/RSKImageCropper/UIApplication+RSKImageCropper.h

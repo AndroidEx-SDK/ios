@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCToolBar/RCCToolBar.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCToolBar/RCCToolBar.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCToolBar/RCCToolBar.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCToolBar/RCCToolBar.h \
   ../../react-native/React/Views/RCTViewManager.h \
   ../../react-native/React/Base/RCTBridgeModule.h \
   ../../react-native/React/Base/RCTDefines.h \

@@ -1,7 +1,7 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Text/RCTText.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Text/RCTText.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Text/RCTShadowText.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Text/RCTText.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Text/RCTText.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Text/RCTShadowText.h \
   ../../React/Views/RCTShadowView.h ../../React/CSSLayout/CSSLayout.h \
   ../../React/CSSLayout/CSSEnums.h ../../React/CSSLayout/CSSMacros.h \
   ../../React/Views/RCTComponent.h ../../React/Base/RCTRootView.h \

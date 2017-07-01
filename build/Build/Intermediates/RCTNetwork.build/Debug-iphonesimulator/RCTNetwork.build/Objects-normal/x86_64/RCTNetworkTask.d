@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Network/RCTNetworkTask.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Network/RCTNetworkTask.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Network/RCTNetworkTask.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Network/RCTNetworkTask.h \
   ../../React/Base/RCTURLRequestDelegate.h \
   ../../React/Base/RCTURLRequestHandler.h \
   ../../React/Base/RCTBridgeModule.h ../../React/Base/RCTDefines.h \

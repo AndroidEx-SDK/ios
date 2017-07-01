@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Text/RCTTextSelection.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Text/RCTTextSelection.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Text/RCTTextSelection.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Text/RCTTextSelection.h \
   ../../React/Base/RCTConvert.h ../../React/CSSLayout/CSSLayout.h \
   ../../React/CSSLayout/CSSEnums.h ../../React/CSSLayout/CSSMacros.h \
   ../../React/Views/RCTAnimationType.h \

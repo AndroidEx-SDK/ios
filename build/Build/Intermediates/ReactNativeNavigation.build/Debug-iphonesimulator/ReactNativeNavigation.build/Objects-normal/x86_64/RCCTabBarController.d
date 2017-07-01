@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCTabBarController.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCTabBarController.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCTabBarController.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCTabBarController.h \
   ../../react-native/React/Base/RCTBridge.h \
   ../../react-native/React/Base/RCTBridgeDelegate.h \
   ../../react-native/React/Base/RCTJavaScriptLoader.h \
@@ -8,7 +8,7 @@ dependencies: \
   ../../react-native/React/Base/RCTBridgeModule.h \
   ../../react-native/React/Base/RCTFrameUpdate.h \
   ../../react-native/React/Base/RCTInvalidating.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCViewController.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCViewController.h \
   ../../react-native/React/Base/RCTConvert.h \
   ../../react-native/React/CSSLayout/CSSLayout.h \
   ../../react-native/React/CSSLayout/CSSEnums.h \
@@ -19,7 +19,7 @@ dependencies: \
   ../../react-native/React/Base/RCTLog.h \
   ../../react-native/React/Base/RCTAssert.h \
   ../../react-native/React/Views/RCTPointerEvents.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCManager.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCManager.h \
   ../../react-native/React/Modules/RCTUIManager.h \
   ../../react-native/React/Views/RCTViewManager.h \
   ../../react-native/React/Base/RCTEventDispatcher.h \

@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Settings/RCTSettingsManager.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Settings/RCTSettingsManager.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Settings/RCTSettingsManager.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Settings/RCTSettingsManager.h \
   ../../React/Base/RCTBridgeModule.h ../../React/Base/RCTDefines.h \
   ../../React/Base/RCTBridge.h ../../React/Base/RCTBridgeDelegate.h \
   ../../React/Base/RCTJavaScriptLoader.h \

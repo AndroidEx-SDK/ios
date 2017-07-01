@@ -1,8 +1,8 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Image/RCTImageUtils.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Image/RCTImageUtils.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Image/RCTImageUtils.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Image/RCTImageUtils.h \
   ../../React/Base/RCTDefines.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/Image/RCTResizeMode.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/Image/RCTResizeMode.h \
   ../../React/Base/RCTConvert.h ../../React/CSSLayout/CSSLayout.h \
   ../../React/CSSLayout/CSSEnums.h ../../React/CSSLayout/CSSMacros.h \
   ../../React/Views/RCTAnimationType.h \

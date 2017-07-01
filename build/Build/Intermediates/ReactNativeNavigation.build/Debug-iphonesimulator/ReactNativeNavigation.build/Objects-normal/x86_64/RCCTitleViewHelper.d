@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/Helpers/RCCTitleViewHelper.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/Helpers/RCCTitleViewHelper.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/Helpers/RCCTitleViewHelper.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/Helpers/RCCTitleViewHelper.h \
   ../../react-native/React/Base/RCTConvert.h \
   ../../react-native/React/CSSLayout/CSSLayout.h \
   ../../react-native/React/CSSLayout/CSSEnums.h \

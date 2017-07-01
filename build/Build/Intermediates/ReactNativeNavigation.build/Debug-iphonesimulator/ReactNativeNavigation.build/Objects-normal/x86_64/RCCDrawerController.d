@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.h \
   ../../react-native/React/Base/RCTBridge.h \
   ../../react-native/React/Base/RCTBridgeDelegate.h \
   ../../react-native/React/Base/RCTJavaScriptLoader.h \
@@ -8,12 +8,12 @@ dependencies: \
   ../../react-native/React/Base/RCTBridgeModule.h \
   ../../react-native/React/Base/RCTFrameUpdate.h \
   ../../react-native/React/Base/RCTInvalidating.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerController.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCViewController.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMExampleDrawerVisualStateManager.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerVisualState.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerHelper.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerController.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCViewController.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMExampleDrawerVisualStateManager.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerVisualState.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerHelper.h \
   ../../react-native/React/Base/RCTConvert.h \
   ../../react-native/React/CSSLayout/CSSLayout.h \
   ../../react-native/React/CSSLayout/CSSEnums.h \
@@ -24,4 +24,4 @@ dependencies: \
   ../../react-native/React/Base/RCTLog.h \
   ../../react-native/React/Base/RCTAssert.h \
   ../../react-native/React/Views/RCTPointerEvents.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCManagerModule.h
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCManagerModule.h

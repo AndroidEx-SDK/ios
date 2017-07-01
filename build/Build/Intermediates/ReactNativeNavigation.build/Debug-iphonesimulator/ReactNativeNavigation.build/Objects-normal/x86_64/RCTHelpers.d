@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/Helpers/RCTHelpers.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/Helpers/RCTHelpers.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/Helpers/RCTHelpers.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/Helpers/RCTHelpers.h \
   ../../react-native/React/Base/RCTRootView.h \
   ../../react-native/React/Base/RCTBridge.h \
   ../../react-native/React/Base/RCTBridgeDelegate.h \

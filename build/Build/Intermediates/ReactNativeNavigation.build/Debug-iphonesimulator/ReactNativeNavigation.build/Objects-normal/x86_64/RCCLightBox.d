@@ -1,7 +1,7 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCLightBox.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCLightBox.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCManager.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCLightBox.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCLightBox.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCManager.h \
   ../../react-native/React/Base/RCTBridgeModule.h \
   ../../react-native/React/Base/RCTDefines.h \
   ../../react-native/React/Base/RCTRootView.h \
@@ -21,4 +21,4 @@ dependencies: \
   ../../react-native/React/Base/RCTLog.h \
   ../../react-native/React/Base/RCTAssert.h \
   ../../react-native/React/Views/RCTPointerEvents.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/Helpers/RCTHelpers.h
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/Helpers/RCTHelpers.h

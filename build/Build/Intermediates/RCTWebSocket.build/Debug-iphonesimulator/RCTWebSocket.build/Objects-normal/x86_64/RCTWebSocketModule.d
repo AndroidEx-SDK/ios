@@ -1,12 +1,12 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/WebSocket/RCTWebSocketModule.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/WebSocket/RCTWebSocketModule.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/WebSocket/RCTWebSocketModule.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/WebSocket/RCTWebSocketModule.h \
   ../../React/Modules/RCTEventEmitter.h ../../React/Base/RCTBridge.h \
   ../../React/Base/RCTBridgeDelegate.h \
   ../../React/Base/RCTJavaScriptLoader.h ../../React/Base/RCTDefines.h \
   ../../React/Base/RCTBridgeModule.h ../../React/Base/RCTFrameUpdate.h \
   ../../React/Base/RCTInvalidating.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native/Libraries/WebSocket/RCTSRWebSocket.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native/Libraries/WebSocket/RCTSRWebSocket.h \
   ../../React/Base/RCTConvert.h ../../React/CSSLayout/CSSLayout.h \
   ../../React/CSSLayout/CSSEnums.h ../../React/CSSLayout/CSSMacros.h \
   ../../React/Views/RCTAnimationType.h \

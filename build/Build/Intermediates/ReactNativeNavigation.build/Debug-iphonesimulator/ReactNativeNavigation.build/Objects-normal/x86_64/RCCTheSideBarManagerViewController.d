@@ -1,10 +1,10 @@
 dependencies: \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCTheSideBarManagerViewController.m \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCTheSideBarManagerViewController.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/TheSidebarController.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/Animations/SidebarAnimation.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCViewController.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCTheSideBarManagerViewController.m \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCTheSideBarManagerViewController.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/TheSidebarController.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/Animations/SidebarAnimation.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCViewController.h \
   ../../react-native/React/Base/RCTBridge.h \
   ../../react-native/React/Base/RCTBridgeDelegate.h \
   ../../react-native/React/Base/RCTJavaScriptLoader.h \
@@ -12,7 +12,7 @@ dependencies: \
   ../../react-native/React/Base/RCTBridgeModule.h \
   ../../react-native/React/Base/RCTFrameUpdate.h \
   ../../react-native/React/Base/RCTInvalidating.h \
-  /Users/nodepoint/workspace/Residential/Intermobile/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerHelper.h \
+  /Users/yerong/github/lockaxial/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerHelper.h \
   ../../react-native/React/Base/RCTConvert.h \
   ../../react-native/React/CSSLayout/CSSLayout.h \
   ../../react-native/React/CSSLayout/CSSEnums.h \
