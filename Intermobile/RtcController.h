@@ -45,7 +45,7 @@ typedef enum EVENTID
 -(void)onNetworkChanged:(BOOL)netstatus; //网络发生变化时调用该方法
 -(BOOL)accObjIsRegisted;  //检查RTC账户是否已经注册
 -(void)login:(NSString*)username;
--(void)openLock:(NSString*) deviceKey;
+-(void)openLock:(NSString*) deviceKey unitNo:(NSString*)unitNo;
 -(void)openTalk:(NSString*) deviceKey;
 -(void)unRegister;
 -(void)sendMessageToReact:(NSString*)eventName notification:(NSNotification *)notification; //给React发送消息

@@ -59,40 +59,40 @@ static RtcController *_INSTANCE=nil;
 
 //@synthesize bridge = _bridge;
 /*
-RCT_EXPORT_MODULE(ReactBridge);
-
-RCT_EXPORT_METHOD(sendMainMessage:(int)code parameter:(NSString *)parameter)
-{
-  RCTLogInfo(@"ReactBridge ------>try to send Main Service<------- %d and %@", code, parameter);
-  if(code==10000) //设置URL地址
-  {
-    [RtcController setApplicationUrl:parameter];
-  }
-  else if(code==10001) //设置用户账户，并且开始登录RTC
-  {
-    [self setLog:@"获取到React登录账户，初始化RTC"];
-    [self login:parameter];
-  }
-  else if(code==10002) //退出登录
-  {
-    [self unRegister];
-  }
-  else if(code==40001) //检测RTC状态
-  {
-    int rtcCode=0;
-    //if (self.sdkObj && [self.sdkObj isInitOk] && self.accObj && [self.accObj isRegisted])
-    if([self accObjIsRegisted])
-    {
-      rtcCode=10;
-    }
-    [self sendMessageToReact:@"changeRtcStatus" notification:@{@"rtcStatus":[NSNumber numberWithInt:(rtcCode)]}];
-  }
-  else if(code==20033) //直接打开门襟设备
-  {
-    [self openLock:parameter];
-  }
-}
-*/
+ RCT_EXPORT_MODULE(ReactBridge);
+ 
+ RCT_EXPORT_METHOD(sendMainMessage:(int)code parameter:(NSString *)parameter)
+ {
+ RCTLogInfo(@"ReactBridge ------>try to send Main Service<------- %d and %@", code, parameter);
+ if(code==10000) //设置URL地址
+ {
+ [RtcController setApplicationUrl:parameter];
+ }
+ else if(code==10001) //设置用户账户，并且开始登录RTC
+ {
+ [self setLog:@"获取到React登录账户，初始化RTC"];
+ [self login:parameter];
+ }
+ else if(code==10002) //退出登录
+ {
+ [self unRegister];
+ }
+ else if(code==40001) //检测RTC状态
+ {
+ int rtcCode=0;
+ //if (self.sdkObj && [self.sdkObj isInitOk] && self.accObj && [self.accObj isRegisted])
+ if([self accObjIsRegisted])
+ {
+ rtcCode=10;
+ }
+ [self sendMessageToReact:@"changeRtcStatus" notification:@{@"rtcStatus":[NSNumber numberWithInt:(rtcCode)]}];
+ }
+ else if(code==20033) //直接打开门襟设备
+ {
+ [self openLock:parameter];
+ }
+ }
+ */
 
 - (void)sendMessageToReact:(NSString*)eventName notification:(NSNotification *)notification
 {
@@ -101,36 +101,36 @@ RCT_EXPORT_METHOD(sendMainMessage:(int)code parameter:(NSString *)parameter)
 }
 //------------短信验证方法------------
 /*
-RCT_EXPORT_METHOD(sendSms:(NSString *)phone)
-{
-  RCTLogInfo(@"ReactBridge ------>try to send SMS to<------- %@", phone);
-  [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phone
-                                 zone:@"86"
-                     customIdentifier:nil
-                               result:^(NSError *error){
-                                 if (!error) {
-                                   [self sendMessageToReact:@"sendSmsSuccess" notification:nil];
-                                 } else {
-                                   [self sendMessageToReact:@"sendSmsFail" notification:nil];
-                                 }
-                               }];
-}
-
-RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
-{
-  RCTLogInfo(@"ReactBridge ------>try to send SMS to<------- %@", phone);
-  [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phone
-                                 zone:@"86"
-                     customIdentifier:nil
-                               result:^(NSError *error){
-                                 if (!error) {
-                                   [self sendMessageToReact:@"verifySmsSuccess" notification:nil];
-                                 } else {
-                                   [self sendMessageToReact:@"verifySmsFail" notification:nil];
-                                 }
-                               }];
-}
-*/
+ RCT_EXPORT_METHOD(sendSms:(NSString *)phone)
+ {
+ RCTLogInfo(@"ReactBridge ------>try to send SMS to<------- %@", phone);
+ [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phone
+ zone:@"86"
+ customIdentifier:nil
+ result:^(NSError *error){
+ if (!error) {
+ [self sendMessageToReact:@"sendSmsSuccess" notification:nil];
+ } else {
+ [self sendMessageToReact:@"sendSmsFail" notification:nil];
+ }
+ }];
+ }
+ 
+ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
+ {
+ RCTLogInfo(@"ReactBridge ------>try to send SMS to<------- %@", phone);
+ [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phone
+ zone:@"86"
+ customIdentifier:nil
+ result:^(NSError *error){
+ if (!error) {
+ [self sendMessageToReact:@"verifySmsSuccess" notification:nil];
+ } else {
+ [self sendMessageToReact:@"verifySmsFail" notification:nil];
+ }
+ }];
+ }
+ */
 //------------可视对讲初始化-----------
 //开始进行初始化
 
@@ -149,7 +149,7 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
     {
       double timezoneFix = [NSTimeZone localTimeZone].secondsFromGMT;
       int days=(int)(([[NSDate date] timeIntervalSince1970] + timezoneFix)/(24*3600))
-              -(int)(([saveDate timeIntervalSince1970] + timezoneFix)/(24*3600));
+      -(int)(([saveDate timeIntervalSince1970] + timezoneFix)/(24*3600));
       if(days>28)
       {
         [self setLog:[NSString stringWithFormat:@"缓存token%@已经过期",token]];
@@ -178,12 +178,12 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
 //删除缓存的token
 -(void)clearToken
 {
-    [self setLog:[NSString stringWithFormat:@"将token%@缓存删除",token]];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults removeObjectForKey:@"RTC_TOKEN"];
-    [userDefaults removeObjectForKey:@"RTC_ACCOUNT_ID"];
-    [userDefaults removeObjectForKey:@"RTC_TIME"];
-    [userDefaults synchronize];
+  [self setLog:[NSString stringWithFormat:@"将token%@缓存删除",token]];
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  [userDefaults removeObjectForKey:@"RTC_TOKEN"];
+  [userDefaults removeObjectForKey:@"RTC_ACCOUNT_ID"];
+  [userDefaults removeObjectForKey:@"RTC_TIME"];
+  [userDefaults synchronize];
 }
 
 - (void)onInit
@@ -267,7 +267,7 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
     {
       [self registerToRtcServer]; //如果之前已经获取到token则直接进行注册
     }
-
+    
   }
   
 }
@@ -488,6 +488,7 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
   }
   else if (type == SDK_CALLBACK_ACCEPTED) //对方接受了呼叫
   {
+    
   }
   else //呼叫失败，关闭呼叫页面
   {
@@ -518,11 +519,17 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
   {
     if(callController)
     {
-      int ret = [callObj doSetCallVideoWindow:callController.remoteVideoView localVideoWindow:nil];//第一个参数必须为IOSDisplay*类型
+      int ret = [callObj doSetCallVideoWindow:callController.remoteVideoView localVideoWindow:(void *)callController.localVideoView];//第一个参数必须为IOSDisplay*类型
     }
     else if(talkController)
     {
+      [talkController onCalling:true];
       int ret = [callObj doSetCallVideoWindow:talkController.remoteVideoView localVideoWindow:(void *)talkController.localVideoView];
+    }
+  }else{
+    if(talkController)
+    {
+      [talkController onCalling:false];
     }
   }
   [self setCallIncomingFlag:NO];
@@ -595,6 +602,15 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
     if([deviceKey isEqualToString:self.callFrom]){
       [self cancelCallFromDevice]; //取消从设备端的呼叫，通常是由其他人接听
     }
+  }
+  else if([command isEqualToString:@"useCoupon"])
+  {
+    NSString* couponId=[msg objectForKey:@"couponId"];
+    [self sendMessageToReact:@"useCoupon" notification:@{@"couponId":couponId}];
+  }
+  else
+  {
+    [self sendMessageToReact:command notification:nil];
   }
   return 0;
 }
@@ -680,21 +696,21 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5*NSEC_PER_SEC)),dispatch_get_main_queue(),^
                    {
                      //TODO, 当切换到前台，打开来电界面
-//                     CCallingViewController* view1 = [[CCallingViewController alloc]init];
-//                     view1.isVideo = !(callType == AUDIO || callType == AUDIO_RECV || callType == AUDIO_SEND);
-//                     view1.isCallOut = NO;
-//                     
-//                     if (view1.isVideo)
-//                     {
-//                       view1.isAutoRotate = isAutoRotationVideo;
-//                     }
-//                     
-//                     view1.view.frame = self.view.frame;
-//                     [callingView release];
-//                     callingView = view1;
-//                     [callingView retain];
-//                     [self presentViewController:view1 animated:NO completion:nil];
-//                     [view1 release];
+                     //                     CCallingViewController* view1 = [[CCallingViewController alloc]init];
+                     //                     view1.isVideo = !(callType == AUDIO || callType == AUDIO_RECV || callType == AUDIO_SEND);
+                     //                     view1.isCallOut = NO;
+                     //
+                     //                     if (view1.isVideo)
+                     //                     {
+                     //                       view1.isAutoRotate = isAutoRotationVideo;
+                     //                     }
+                     //
+                     //                     view1.view.frame = self.view.frame;
+                     //                     [callingView release];
+                     //                     callingView = view1;
+                     //                     [callingView retain];
+                     //                     [self presentViewController:view1 animated:NO completion:nil];
+                     //                     [view1 release];
                    });
   }
 }
@@ -829,9 +845,9 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
 //更新呼叫图片
 -(void)appendCallImage:(NSString*)imageUrl
 {
-    if(callController){
-        [callController appendCallImage:imageUrl];  //更新呼叫图片
-    }
+  if(callController){
+    [callController appendCallImage:imageUrl];  //更新呼叫图片
+  }
 }
 
 //呼叫门襟设备
@@ -1031,16 +1047,25 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
                        TERMINAL_TYPE_PHONE,KEY_CALL_REMOTE_TERMINAL_TYPE,
                        message,KEY_CALL_INFO,
                        nil];
-
+  
   [self setLog:[NSString stringWithFormat:@"发送消息参数：%@",dic]];
   int code=[accObj doSendIM:dic];
   [self setLog:[NSString stringWithFormat:@"发送消息结果：%d",code]];
 }
 
 //手机APP直接发过来的开锁指令
--(void)openLock:(NSString*) deviceKey
+-(void)openLock:(NSString*) deviceKey unitNo:(NSString*)unitNo
 {
-  [self sendMessageToDevice:deviceKey message:@"open the door"];
+  NSString* message=@"";
+  if(unitNo!=nil)
+  {
+    message = [message stringByAppendingFormat:@"%@-%@",@"open the door",unitNo];
+  }
+  else
+  {
+    message=@"open the door";
+  }
+  [self sendMessageToDevice:deviceKey message:message];
 }
 
 //手机APP呼叫室内机

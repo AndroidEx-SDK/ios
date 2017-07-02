@@ -18,6 +18,7 @@
   int buttonSize;
   int toolBarY;
 }
+@property (nonatomic,strong) IBOutlet UILabel* fromNameLabel;
 @property (nonatomic,strong) UIButton* speakerSwitchButton;
 @property (nonatomic,strong) UIButton* closeRtcButton;
 @end
@@ -50,6 +51,7 @@
   toolBarY=screenRect.size.height-marginHeight-buttonSize;
   [self initVideoView];
   [self initToolbar];
+  [self initLockLabel];
 }
 
 //初始化可视对讲图像View
@@ -99,6 +101,30 @@
   [self.view addSubview:self.closeRtcButton];
 }
 
+-(void)initLockLabel
+{
+  CGRect labelFrame=CGRectMake(0, (marginHeight*2+imageSize/2), screenRect.size.width,labelHeight);
+  self.fromNameLabel=[[UILabel alloc]initWithFrame:labelFrame];
+  self.fromNameLabel.textAlignment =NSTextAlignmentCenter;
+  [self.fromNameLabel setTextColor:[UIColor whiteColor]];
+  self.fromNameLabel.text=@"正在拨打中...";
+  [self.view addSubview:self.fromNameLabel];
+}
+
+-(void)onCalling:(BOOL)isVideo
+{
+  if(isVideo){
+    [self.fromNameLabel setHidden:YES];
+  }else{
+    self.fromNameLabel.text=@"正在通话中...";
+  }
+}
+
+-(void)setCallInfoHidden:(BOOL)isHidden
+{
+  [self.fromNameLabel setHidden:isHidden];
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
   
@@ -146,10 +172,10 @@
 
 -(void)setLog:(NSString*)log
 {
-    NSDateFormatter *dateFormat=[[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"HH:mm:ss"];
-    NSString* datestr = [dateFormat stringFromDate:[NSDate date]];
-    CWLogDebug(@"SDKTEST:%@:%@",datestr,log);
+  NSDateFormatter *dateFormat=[[NSDateFormatter alloc] init];
+  [dateFormat setDateFormat:@"HH:mm:ss"];
+  NSString* datestr = [dateFormat stringFromDate:[NSDate date]];
+  CWLogDebug(@"SDKTEST:%@:%@",datestr,log);
 }
 
 @end

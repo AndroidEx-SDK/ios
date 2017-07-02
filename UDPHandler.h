@@ -12,12 +12,14 @@
 
 @interface UDPHandler : NSObject<GCDAsyncUdpSocketDelegate>
 
-  // 获取伪单例
-  + (UDPHandler*) shareInstance;
+// 获取伪单例
++ (UDPHandler*) shareInstance;
 
-  - (uint8_t) setupSocket;
+- (void) setupSocket;
 
-  // 向UDP服务端发送信息
-- (void) write:(NSString*) data cb:(RCTResponseSenderBlock)callback;
+// 向UDP服务端发送信息
+- (uint8_t) write:(NSString*) data cb:(RCTResponseSenderBlock)callback;
+
+- (void) cancelRequest;
 
 @end

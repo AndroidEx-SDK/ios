@@ -32,6 +32,7 @@
 
 @implementation CallController
 @synthesize remoteVideoView = _remoteVideoView;
+@synthesize localVideoView = _localVideoView;
 @synthesize rejectButton,openLockButton,voiceButton,videoButton,speakerSwitchButton,closeRtcButton,closeRtcAndOpenLockButton;
 @synthesize callingImageView;
 
@@ -59,9 +60,6 @@
   [self initLockLabel];
   [self initImageUrl];
   [self initVideoView];
-  [self initToolbar];
-  [self initRtcToolbar];
-  [self setRtcToolbarHidden:YES];
 }
 
 //初始化门襟名称label
@@ -118,48 +116,65 @@
     videoViewWidth=imageSize;
     videoViewHeight=imageSize*videoHeight/videoWidth;
   }
-  self.remoteVideoView = [[IOSDisplay alloc]initWithFrame:CGRectMake((screenRect.size.width-videoViewWidth)/2,((toolBarY-marginHeight-videoViewHeight)/2+marginHeight),videoViewWidth, videoViewHeight)];
+  int lx=(screenRect.size.width-videoViewWidth)/2;
+  int ly=((toolBarY-marginHeight-videoViewHeight)/2+marginHeight);
+  self.remoteVideoView = [[IOSDisplay alloc]initWithFrame:CGRectMake(lx,ly,videoViewWidth, videoViewHeight)];
+  self.localVideoView = [[UIView alloc]initWithFrame:CGRectMake(lx,ly,videoViewWidth/4, videoViewHeight/4)];
+  
   [self.view addSubview:self.remoteVideoView];
+  [self.view addSubview:self.localVideoView];
 }
 
 //初始化工具条
--(void)initToolbar
+-(void)initToolbar:(BOOL)isAdminCall
 {
   int buttonNumber=4;
+  if(isAdminCall){
+    buttonNumber=3;
+  }
+  int buttonIndex=1;
   int buttonMargin=(screenRect.size.width-buttonNumber*buttonSize)/(buttonNumber+1);
-  CGRect rejectButtonFrame=CGRectMake((buttonMargin*1+buttonSize*0), toolBarY, buttonSize, buttonSize);
+  CGRect rejectButtonFrame=CGRectMake((buttonMargin*buttonIndex+buttonSize*(buttonIndex-1)), toolBarY, buttonSize, buttonSize);
   [self.rejectButton=[UIButton alloc]initWithFrame:rejectButtonFrame];
   [self.rejectButton setTitle:@"关闭" forState:UIControlStateNormal];
   [self.rejectButton setBackgroundColor:[UIColor blackColor]];
   [self.rejectButton addTarget:self action:@selector(onReject:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:self.rejectButton];
+  buttonIndex++;
   
-  CGRect openLockButtonFrame=CGRectMake((buttonMargin*2+buttonSize*1), toolBarY, buttonSize, buttonSize);
-  [self.openLockButton=[UIButton alloc]initWithFrame:openLockButtonFrame];
-  [self.openLockButton setTitle:@"开门" forState:UIControlStateNormal];
-  [self.openLockButton setBackgroundColor:[UIColor blackColor]];
-  [self.openLockButton addTarget:self action:@selector(onOpenDoor:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:self.openLockButton];
+  if(!isAdminCall){
+    CGRect openLockButtonFrame=CGRectMake((buttonMargin*buttonIndex+buttonSize*(buttonIndex-1)), toolBarY, buttonSize, buttonSize);
+    [self.openLockButton=[UIButton alloc]initWithFrame:openLockButtonFrame];
+    [self.openLockButton setTitle:@"开门" forState:UIControlStateNormal];
+    [self.openLockButton setBackgroundColor:[UIColor blackColor]];
+    [self.openLockButton addTarget:self action:@selector(onOpenDoor:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.openLockButton];
+    buttonIndex++;
+  }
   
-  CGRect voiceButtonFrame=CGRectMake((buttonMargin*3+buttonSize*2), toolBarY, buttonSize, buttonSize);
+  CGRect voiceButtonFrame=CGRectMake((buttonMargin*buttonIndex+buttonSize*(buttonIndex-1)), toolBarY, buttonSize, buttonSize);
   [self.voiceButton=[UIButton alloc]initWithFrame:voiceButtonFrame];
   [self.voiceButton setTitle:@"音频" forState:UIControlStateNormal];
   [self.voiceButton setBackgroundColor:[UIColor blackColor]];
   [self.voiceButton addTarget:self action:@selector(onAcceptVoice:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:self.voiceButton];
+  buttonIndex++;
   
-  CGRect videoButtonFrame=CGRectMake((buttonMargin*4+buttonSize*3), toolBarY, buttonSize, buttonSize);
+  CGRect videoButtonFrame=CGRectMake((buttonMargin*buttonIndex+buttonSize*(buttonIndex-1)), toolBarY, buttonSize, buttonSize);
   [self.videoButton=[UIButton alloc]initWithFrame:videoButtonFrame];
   [self.videoButton setTitle:@"视频" forState:UIControlStateNormal];
   [self.videoButton setBackgroundColor:[UIColor blackColor]];
   [self.videoButton addTarget:self action:@selector(onAcceptVideo:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:self.videoButton];
+  buttonIndex++;
 }
 
 -(void)setToolbarHidden:(BOOL)isHidden
 {
   [rejectButton setHidden:isHidden];
-  [openLockButton setHidden:isHidden];
+  if(openLockButton){
+    [openLockButton setHidden:isHidden];
+  }
   [voiceButton setHidden:isHidden];
   [videoButton setHidden:isHidden];
 }
@@ -168,7 +183,9 @@
 {
   [speakerSwitchButton setHidden:isHidden];
   [closeRtcButton setHidden:isHidden];
-  [closeRtcAndOpenLockButton setHidden:isHidden];
+  if(closeRtcAndOpenLockButton){
+    [closeRtcAndOpenLockButton setHidden:isHidden];
+  }
 }
 
 -(void)setCallInfoHidden:(BOOL)isHidden
@@ -178,30 +195,40 @@
 }
 
 //初始化工具条
--(void)initRtcToolbar
+-(void)initRtcToolbar:(BOOL)isAdminCall
 {
   int buttonNumber=3;
+  if(isAdminCall){
+    buttonNumber=2;
+  }
+  int buttonIndex=1;
+  
   int buttonMargin=(screenRect.size.width-buttonNumber*buttonSize)/(buttonNumber+1);
-  CGRect speakerSwitchButtonFrame=CGRectMake((buttonMargin*1+buttonSize*0), toolBarY, buttonSize, buttonSize);
+  CGRect speakerSwitchButtonFrame=CGRectMake((buttonMargin*buttonIndex+buttonSize*(buttonIndex-1)), toolBarY, buttonSize, buttonSize);
   [self.speakerSwitchButton=[UIButton alloc]initWithFrame:speakerSwitchButtonFrame];
   [self.speakerSwitchButton setTitle:@"切换免提" forState:UIControlStateNormal];
   [self.speakerSwitchButton setBackgroundColor:[UIColor blackColor]];
   [self.speakerSwitchButton addTarget:self action:@selector(onSwitchSpeaker:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:self.speakerSwitchButton];
+  buttonIndex++;
   
-  CGRect closeRtcButtonFrame=CGRectMake((buttonMargin*2+buttonSize*1), toolBarY, buttonSize, buttonSize);
+  CGRect closeRtcButtonFrame=CGRectMake((buttonMargin*buttonIndex+buttonSize*(buttonIndex-1)), toolBarY, buttonSize, buttonSize);
   [self.closeRtcButton=[UIButton alloc]initWithFrame:closeRtcButtonFrame];
   [self.closeRtcButton setTitle:@"挂断" forState:UIControlStateNormal];
   [self.closeRtcButton setBackgroundColor:[UIColor blackColor]];
   [self.closeRtcButton addTarget:self action:@selector(onHangUp:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:self.closeRtcButton];
+  buttonIndex++;
   
-  CGRect closeRtcAndOpenLockButtonFrame=CGRectMake((buttonMargin*3+buttonSize*2), toolBarY, buttonSize, buttonSize);
-  [self.closeRtcAndOpenLockButton=[UIButton alloc]initWithFrame:closeRtcAndOpenLockButtonFrame];
-  [self.closeRtcAndOpenLockButton setTitle:@"开门" forState:UIControlStateNormal];
-  [self.closeRtcAndOpenLockButton setBackgroundColor:[UIColor blackColor]];
-  [self.closeRtcAndOpenLockButton addTarget:self action:@selector(onHangupAndOpenDoor:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:self.closeRtcAndOpenLockButton];
+  if(!isAdminCall){
+    CGRect closeRtcAndOpenLockButtonFrame=CGRectMake((buttonMargin*buttonIndex+buttonSize*(buttonIndex-1)), toolBarY, buttonSize, buttonSize);
+    [self.closeRtcAndOpenLockButton=[UIButton alloc]initWithFrame:closeRtcAndOpenLockButtonFrame];
+    [self.closeRtcAndOpenLockButton setTitle:@"开门" forState:UIControlStateNormal];
+    [self.closeRtcAndOpenLockButton setBackgroundColor:[UIColor blackColor]];
+    [self.closeRtcAndOpenLockButton addTarget:self action:@selector(onHangupAndOpenDoor:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.closeRtcAndOpenLockButton];
+    buttonIndex++;
+  }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -211,7 +238,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    callDurationTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(onTimeoutChecking:) userInfo:nil repeats:NO];
+  callDurationTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(onTimeoutChecking:) userInfo:nil repeats:NO];
 }
 
 -(void)onCalling:(NSString*)lockName imageUrl:(NSString*)imageUrl
@@ -219,6 +246,14 @@
   [self setCallingImage:imageUrl];
   self.lockNameLabel.text=lockName;
   
+  BOOL isAdminCall=[lockName isEqualToString:@"管理中心"];
+  [self initToolbar:isAdminCall];
+  [self initRtcToolbar:isAdminCall];
+  [self setRtcToolbarHidden:YES];
+  
+  if(!isAdminCall){
+    [self.localVideoView setHidden:YES];
+  }
 }
 
 -(void)appendCallImage:(NSString*)imageUrl
@@ -316,10 +351,10 @@
 
 -(void)setLog:(NSString*)log
 {
-    NSDateFormatter *dateFormat=[[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"HH:mm:ss"];
-    NSString* datestr = [dateFormat stringFromDate:[NSDate date]];
-    CWLogDebug(@"SDKTEST:%@:%@",datestr,log);
+  NSDateFormatter *dateFormat=[[NSDateFormatter alloc] init];
+  [dateFormat setDateFormat:@"HH:mm:ss"];
+  NSString* datestr = [dateFormat stringFromDate:[NSDate date]];
+  CWLogDebug(@"SDKTEST:%@:%@",datestr,log);
 }
 
 @end

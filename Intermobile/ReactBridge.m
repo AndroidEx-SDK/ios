@@ -2,12 +2,13 @@
 //  RtcController.m
 //  Intermobile
 //  可视对讲控制类实现
-//  Created by 安卓工控 on 2017/2/17.
+//  Created by 结点科技 on 2017/2/17.
 //  Copyright © 2017年 Facebook. All rights reserved.
 //
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import "ReactBridge.h"
 #import "RtcController.h"
+#import "BleHandler.h"
 #import <SMS_SDK/SMSSDK.h>
 
 //RCTConvert类支持的的类型也都可以使用,RCTConvert还提供了一系列辅助函数，用来接收一个JSON值并转换到原生Objective-C类型或类。
@@ -44,6 +45,7 @@ RCT_EXPORT_METHOD(sendMainMessage:(int)code parameter:(NSString *)parameter)
   if(code==10000) //设置URL地址
   {
     [RtcController setApplicationUrl:parameter];
+    [self initBle];
   }
   else if(code==10001) //设置用户账户，并且开始登录RTC
   {
@@ -68,13 +70,41 @@ RCT_EXPORT_METHOD(sendMainMessage:(int)code parameter:(NSString *)parameter)
   }
   else if(code==20033) //直接打开门襟设备
   {
+    NSArray *array = [parameter componentsSeparatedByString:@"-"]; //从字符A中分隔成2个元素的数组
     RtcController *rtcController=[RtcController getInstance];
-    [rtcController openLock:parameter];
+    NSString *lockKey=[array objectAtIndex:0];
+    NSString *unitNo=nil;
+    if(array.count>1)
+    {
+      unitNo=[array objectAtIndex:1];
+    }
+    [rtcController openLock:lockKey unitNo:unitNo];
   }
   else if(code==50001) //直接打开室内机设备
   {
     RtcController *rtcController=[RtcController getInstance];
     [rtcController openTalk:parameter];
+  }
+  else if(code==50002) //呼叫管理中心设备
+  {
+    RtcController *rtcController=[RtcController getInstance];
+    [rtcController openTalk:parameter];
+  }
+  else if(code==60001) //扫描蓝牙门禁设备
+  {
+    [self startBleScan];
+  }
+  else if(code==60006) //停止扫描蓝牙门禁设备
+  {
+    [self stopBleScan];
+  }
+  else if(code==60002) //发送打开蓝牙门禁请求
+  {
+    NSArray *array = [parameter componentsSeparatedByString:@"-"]; //从字符A中分隔成2个元素的数组
+    NSString *deviceName=[array objectAtIndex:0];
+    NSString *username=[array objectAtIndex:1];
+    NSString *unitNo=[array objectAtIndex:2];
+    [self openBleLock:deviceName username:username unitNo:unitNo];
   }
 }
 
@@ -103,16 +133,16 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
 {
   RCTLogInfo(@"ReactBridge ------>try to verify SMS for<------- %@", phone);
   [SMSSDK commitVerificationCode:code phoneNumber:phone zone:@"86" result:^(SMSSDKUserInfo *userInfo, NSError *error) {
-      if(!error)
-      {
-        RCTLogInfo(@"ReactBridge ------>verify sms success<------- %@", phone);
-        [self sendMessageToReact:@"verifySmsSuccess" notification:nil];
-      }
-      else
-      {
-        RCTLogInfo(@"ReactBridge ------>verify sms failed<------- %@", phone);
-        [self sendMessageToReact:@"verifySmsFail" notification:nil];
-      }
+    if(!error)
+    {
+      RCTLogInfo(@"ReactBridge ------>verify sms success<------- %@", phone);
+      [self sendMessageToReact:@"verifySmsSuccess" notification:nil];
+    }
+    else
+    {
+      RCTLogInfo(@"ReactBridge ------>verify sms failed<------- %@", phone);
+      [self sendMessageToReact:@"verifySmsFail" notification:nil];
+    }
   }];
 }
 
@@ -192,4 +222,27 @@ RCT_EXPORT_METHOD(verifySms:(NSString *)phone code:(NSString*)code)
   return wifiName;
 }
 
+//-------------BLE蓝牙部分--------------
+-(void)initBle
+{
+  BleHandler* bleHandler=[BleHandler getInstance];
+}
+
+-(void)startBleScan //扫描蓝牙设备
+{
+  BleHandler* bleHandler=[BleHandler getInstance];
+  [bleHandler startBleScan];
+}
+
+-(void)stopBleScan //停止扫描蓝牙设备
+{
+  BleHandler* bleHandler=[BleHandler getInstance];
+  [bleHandler stopBleScan];
+}
+
+-(void)openBleLock:(NSString *)deviceName username:(NSString *)username unitNo:(NSString *)unitNo //蓝牙开门
+{
+  BleHandler* bleHandler=[BleHandler getInstance];
+  [bleHandler openBleLock:deviceName username:username unitNo:unitNo];
+}
 @end
